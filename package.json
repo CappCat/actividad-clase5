@@ -15,9 +15,6 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
-	"dependencies": {
-		"bootstrap": "^5.3.8"
-	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^8.0.1",
 		"@sveltejs/kit": "^3.2.0",

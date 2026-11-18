@@ -1,56 +1,104 @@
-# sv
+# Dashboard Meteorológico con Svelte 5
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Aplicación web que permite buscar una ciudad y consultar su clima actual, pronóstico por horas y pronóstico de siete días mediante la API pública de Open-Meteo.
 
-## Creating a project
+## Funcionalidades
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Búsqueda de ciudades por nombre.
+- Selección de ubicaciones cuando existen varias coincidencias.
+- Temperatura actual, humedad relativa y velocidad del viento.
+- Pronóstico por horas para las próximas 24 horas.
+- Pronóstico diario para los próximos siete días.
+- Estados de carga, error y ausencia de resultados.
+- Interfaz adaptable con Bootstrap 5 cargado desde CDN.
 
-```sh
-# create a new project
-npx sv create my-app
+## Tecnologías
+
+- Svelte 5
+- SvelteKit
+- Bootstrap 5
+- Fetch y async/await
+- Open-Meteo REST API
+
+## Requisitos
+
+- Node.js 20 o superior.
+- npm.
+
+## Instalación
+
+```bash
+npm install
 ```
 
-To recreate this project with the same configuration:
+## Ejecución
 
-```sh
-# recreate this project
-npx sv@1.5.0 create --template minimal --types ts --install npm actividad-clase5
-```
-
-## Adding features
-
-Add features to your project with `sv add`:
-
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Luego abre la dirección mostrada por Vite, normalmente `http://localhost:5173`.
 
-To create a production version of your app:
+## Verificación
 
-```sh
+```bash
+npm run check
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## API utilizada
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Geocodificación
+
+```text
+https://geocoding-api.open-meteo.com/v1/search
+```
+
+### Pronóstico meteorológico
+
+```text
+https://api.open-meteo.com/v1/forecast
+```
+
+Los servicios utilizados no requieren API Key.
+
+## Organización
+
+```text
+src/
+├── app.css
+├── lib/
+│   ├── components/
+│   │   ├── App.svelte
+│   │   ├── BuscadorDeCiudad.svelte
+│   │   ├── ClimaActual.svelte
+│   │   ├── PronosticoHoras.svelte
+│   │   └── PronosticoDias.svelte
+│   └── servicios/
+│       └── clima.ts
+└── routes/
+    ├── +layout.svelte
+    └── +page.svelte
+```
+
+## Evidencias
+
+### Pantalla inicial
+
+![Captura de la pantalla inicial](./capturas/pantalla-inicial.png)
+
+### Búsqueda y selección de ciudad
+
+![Captura de la búsqueda](./capturas/busqueda-ciudad.png)
+
+### Condiciones actuales
+
+![Captura del clima actual](./capturas/clima-actual.png)
+
+### Pronóstico por horas
+
+![Captura del pronóstico por horas](./capturas/pronostico-horas.png)
+
+### Pronóstico de siete días
+
+![Captura del pronóstico diario](./capturas/pronostico-siete-dias.png)
