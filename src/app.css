@@ -1,0 +1,67 @@
+:root {
+	font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+	margin: 0;
+	background: #eef4ff;
+}
+
+.app-shell {
+	background:
+		radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.18), transparent 25rem),
+		linear-gradient(135deg, #2563eb 0%, #0ea5a4 100%);
+}
+
+.search-card,
+.empty-state {
+	background: rgba(255, 255, 255, 0.97);
+}
+
+.metric-card,
+.day-card,
+.hour-card {
+	background: #f7faff;
+	border: 1px solid #edf1f7;
+}
+
+.metric-icon {
+	display: block;
+	font-size: 1.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.hourly-grid {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(110px, 1fr);
+	gap: 0.75rem;
+	overflow-x: auto;
+	padding-bottom: 0.5rem;
+}
+
+.hour-card {
+	min-width: 110px;
+	padding: 1rem 0.75rem;
+	border-radius: 0.75rem;
+}
+
+.list-group-item.active {
+	background: #e8f0ff;
+	border-color: #b9cdfa;
+	color: #212529;
+}
+
+.list-group-item.active small {
+	color: #495057 !important;
+}
+
+@media (max-width: 575.98px) {
+	.app-shell {
+		background: linear-gradient(160deg, #2563eb 0%, #0ea5a4 100%);
+	}
+
+	.hourly-grid {
+		grid-auto-columns: 105px;
+	}
+}
